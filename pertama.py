@@ -44,17 +44,40 @@
 #     print(num)
 
 #function
-angka = int(input("Masukkan angka : "))
-def lukman(x):
-    for num in range(1,100):
-        if num % 3 == 0 and num % 5 == 0:
-            print("Lukman")
-        elif num % 3 == 0:
-            print("Luk")
-        elif num % 5 == 0:
-            print("man")
-        else:
-            print(num)
+# angka = int(input("Masukkan angka : "))
+# def lukman(x):
+#     for num in range(1,100):
+#         if num % 3 == 0 and num % 5 == 0:
+#             print("Lukman")
+#         elif num % 3 == 0:
+#             print("Luk")
+#         elif num % 5 == 0:
+#             print("man")
+#         else:
+#             print(num)
+#
+# print("bersiaplah akan muncul lukman:")
+# lukman(angka)
 
-print("bersiaplah akan muncul lukman:")
-lukman(angka)
+import random
+pilihan = ["batu","gunting","kertas"]
+print("permainan suit!")
+pilihanuser = pilihan[int(input("yang mana pilihan kamu?\n1. batu\n2. Gunting\n3. Kertas\n"))-1]
+angka =[1,2,3]
+pilihanbot = random.choice(angka)
+print(f"anda memilih: {pilihanuser}")
+print(f"bot memilih: {pilihan[pilihanbot-1]}")
+if(pilihanbot == 1 and pilihanuser == "gunting"):
+    print("anda kalah")
+elif(pilihanbot == 1 and pilihanuser == "kertas" ):
+    print("anda menang")
+elif(pilihanbot == 2 and pilihanuser == "batu"):
+    print("anda menang")
+elif(pilihanbot == 2 and pilihanuser == "kertas"):
+    print("anda kalah")
+elif(pilihanbot == 3 and pilihanuser == "batu"):
+    print("anda kalah")
+elif(pilihanbot == 3 and pilihanuser == "gunting"):
+    print("anda menang")
+elif(pilihan[pilihanbot-1] == pilihanuser):
+    print("seri")
